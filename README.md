@@ -14,5 +14,6 @@ O teste deverá ser entregue **"pronto para uso"**, onde poderemos facilmente re
 - Realizar as correções necessárias no projeto atual.
 - Soluções serverless serão bem vindas.
 - Preparar um README **bem elaborado** com o passo a passo para subir a aplicação para um stage `dev` ou para `production`.
+- Boas práticas e padrões são **imprescindíveis** em todos os processos!
 
 Para realizar o teste, deve-se fazer um fork deste repositório, realizar as alteraçoes necessárias e enviar o link do seu fork para [jacqueline.mello@avecbrasil.com.br](mailto:jacqueline.mello@avecbrasil.com.br).
