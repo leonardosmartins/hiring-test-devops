@@ -9,8 +9,8 @@ Para realizar o teste, deve-se fazer um fork deste repositório, realizar as alt
 
 - A aplicação deverá rodar em um container docker, utilizando o
 [Dockerfile](./app/Dockerfile) já existente.
-- :heavy_check_mark: A infraestrutura deverá ser criada com alguma ferramenta de IaC (Terraform, Cloudformation, Ansible, Pulumi, CDK, ...).
-- :heavy_check_mark: Fornecer ou detalhar soluções para monitoramento e gerenciamento de logs.
-- :heavy_check_mark: Continuous Deploy é essencial! Github Actions, GitLab CI, TravisCI, CircleCI, Jenkins. Fornecer uma solução de fácil utilização para atualização da infraestrutura e da aplicação.
+- A infraestrutura deverá ser criada com alguma ferramenta de IaC (Terraform, Cloudformation, Ansible, Pulumi, CDK, ...).
+- Fornecer ou detalhar soluções para monitoramento e gerenciamento de logs.
+- Continuous Deploy é essencial! Github Actions, GitLab CI, TravisCI, CircleCI, Jenkins. Fornecer uma solução de fácil utilização para atualização da infraestrutura e da aplicação.
 - Realizar as correções necessárias no projeto atual.
 - Soluções serverless serão bem vindas.
