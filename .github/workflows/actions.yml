@@ -45,14 +45,10 @@ jobs:
         TF_VAR_account_id: aaaa
         TF_VAR_aws_access_key: 'vvvvvv'
         TF_VAR_aws_secret_key: "sdfas"
-    # - name: Terraform Apply
-    #   uses: hashicorp/terraform-github-actions@master
-    #   with:
-    #     tf_actions_version: 0.12.13
-    #     tf_actions_subcommand: 'apply'
-    #     args: '-var-file="test.tfvars"'
-    #     tf_actions_comment: false
-    #   env:
-    #     TF_VAR_account_id: ${{ secrets.ACCOUNT_ID }}
-    #     TF_VAR_aws_access_key: ${{ secrets.ACCESS_KEY }}
-    #     TF_VAR_aws_secret_key: ${{ secrets.SECRET_KEY }}
+    - name: Terraform Apply
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_actions_subcommand: 'apply'
+        tf_actions_comment: false
+        args: '-var-file="test.tfvars"'
