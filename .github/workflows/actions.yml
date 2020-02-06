@@ -44,6 +44,7 @@ jobs:
       with:
         tf_actions_version: 0.12.13
         tf_actions_subcommand: 'apply'
+        args: '-var-file="test.tfvars"'
       env:
         TF_VAR_account_id: ${{ secrets.ACCOUNT_ID }}
         TF_VAR_aws_access_key: ${{ secrets.ACCESS_KEY }}
