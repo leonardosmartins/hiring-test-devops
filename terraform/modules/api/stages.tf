@@ -5,8 +5,6 @@ resource "aws_api_gateway_stage" "stage_api" {
   stage_name    = "main"
   description   = "Main Stage"
 
-  variables = var.stage_variables
-
   tags = {
     Name        = var.name
   }

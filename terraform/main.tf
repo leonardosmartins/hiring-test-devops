@@ -3,7 +3,6 @@ module "api" {
 
   # general
   name              = var.name
-  stage_variables   = var.api_stage_variables
   lambda_invoke_arn = module.app.lambda_invoke_arn
 }
 

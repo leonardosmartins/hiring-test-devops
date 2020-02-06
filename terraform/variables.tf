@@ -19,10 +19,6 @@ variable "name" {
   description = "The name used."
 }
 
-variable "api_stage_variables" {
-  type = map(string)
-}
-
 variable "account_id" {
   
 }

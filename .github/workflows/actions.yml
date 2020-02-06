@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: node:10.16-jessie
-      env:
-        ENV: teste
     steps:
     - uses: actions/checkout@v2
     - name: Set directory
@@ -25,6 +23,12 @@ jobs:
   execute:
     needs: build
     runs-on: ubuntu-latest
+    container:
+      image: hashicorp/terraform
+      env:
+        TF_VAR_account_id: $ACCOUNT_ID
+        TF_VAR_aws_access_key: $ACCESS_KEY
+        TF_VAR_aws_secret_key: $SECRET_KEY
     steps:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@master
@@ -32,4 +36,6 @@ jobs:
         name: lambda.zip
         path: terraform/modules/lambda/app/
     - name: Teste
-      run: ls terraform/modules/lambda/app
+      run: |
+        cd terraform
+        terraform init
