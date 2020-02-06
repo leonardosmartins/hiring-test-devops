@@ -3,9 +3,18 @@ name: CI
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  tbuild:
+    container: 
+      image: node:10.16-jessie
+      env:
+        ENV: teste
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: docker build -t avec-test -f terraform/app/Dockerfile
+    - name: a
+      run: echo $ENV
+
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: Build
+  #     run: docker build -t avec-test -f terraform/app/Dockerfile
