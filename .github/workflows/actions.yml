@@ -30,12 +30,18 @@ jobs:
         TF_VAR_aws_access_key: $ACCESS_KEY
         TF_VAR_aws_secret_key: $SECRET_KEY
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
     - uses: actions/download-artifact@master
       with:
         name: lambda.zip
         path: terraform/modules/lambda/app/
-    - name: Teste
-      run: |
-        cd terraform
-        terraform init
+    - name: Terraform Init
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_ actions_subcommand: init
+      env:
+        TF_VAR_account_id: ${{ secrets.ACCOUNT_ID }}
+        TF_VAR_aws_access_key: ${{ secrets.ACCESS_KEY }}
+        TF_VAR_aws_secret_key: ${{ secrets.SECRET_KEY }}
