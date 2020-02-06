@@ -3,14 +3,16 @@ name: CI
 on: [push]
 
 jobs:
-  tbuild:
+  build:
+    runs-on: ubuntu-latest
     container: 
       image: node:10.16-jessie
       env:
         ENV: teste
     steps:
-    - name: a
-      run: echo $ENV
+    - uses: actions/checkout@v2
+    - name: Build
+      run: ls
 
   # build:
   #   runs-on: ubuntu-latest
