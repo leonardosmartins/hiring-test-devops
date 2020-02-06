@@ -34,7 +34,7 @@ jobs:
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 0.12.13
-        tf_ actions_subcommand: init
+        tf_ actions_subcommand: 'init'
       env:
         TF_VAR_account_id: ${{ secrets.ACCOUNT_ID }}
         TF_VAR_aws_access_key: ${{ secrets.ACCESS_KEY }}
