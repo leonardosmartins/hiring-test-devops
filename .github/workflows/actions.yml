@@ -11,12 +11,9 @@ jobs:
         ENV: teste
     steps:
     - uses: actions/checkout@v2
+    - name: Set directory
+      run: cd terraform/modules/lambda/app
     - name: Build
-      run: ls
-
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: Build
-  #     run: docker build -t avec-test -f terraform/app/Dockerfile
+      run: npm install --only=production
+    - name: Teste
+      run: echo $ENV
