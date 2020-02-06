@@ -23,12 +23,6 @@ jobs:
   execute:
     needs: build
     runs-on: ubuntu-latest
-    container:
-      image: hashicorp/terraform
-      env:
-        TF_VAR_account_id: $ACCOUNT_ID
-        TF_VAR_aws_access_key: $ACCESS_KEY
-        TF_VAR_aws_secret_key: $SECRET_KEY
     steps:
     - name: Checkout
       uses: actions/checkout@v2
