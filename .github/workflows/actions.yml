@@ -13,13 +13,13 @@ jobs:
       run: |
         apt-get update
         apt-get install -y zip
-        cd terraform/modules/lambda/app
+        cd modules/lambda/app
         npm install --only=production
         npm run zip
     - uses: actions/upload-artifact@master
       with:
         name: lambda.zip
-        path: terraform/modules/lambda/app/
+        path: modules/lambda/app/
   execute:
     needs: build
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: lambda.zip
-        path: terraform/modules/lambda/app/
+        path: modules/lambda/app/
     - name: Terraform Init
       uses: hashicorp/terraform-github-actions@master
       with:
