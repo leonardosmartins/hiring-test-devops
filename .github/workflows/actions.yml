@@ -12,9 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set directory
-      run: cd terraform/modules/lambda/app
-    - name: Build
-      run: npm install --only=production
+      run: |
+        cd terraform/modules/lambda/app
+        npm install --only=production
     - name: LS
       run: pwd
     - name: LS2
