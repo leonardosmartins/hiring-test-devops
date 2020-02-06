@@ -8,9 +8,9 @@ jobs:
     container: 
       image: node:10.16-jessie
       env:
-        TF_VAR_account_id: ${{ secrets.ACCOUNT_ID }}
-        TF_VAR_aws_access_key: ${{ secrets.ACCESS_KEY }}
-        TF_VAR_aws_secret_key: ${{ secrets.SECRET_KEY }}
+        TF_VAR_account_id: $ACCOUNT_ID
+        TF_VAR_aws_access_key: $ACCESS_KEY
+        TF_VAR_aws_secret_key: $SECRET_KEY
     steps:
     - uses: actions/checkout@v2
     - name: Set directory
