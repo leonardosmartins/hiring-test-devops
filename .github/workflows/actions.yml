@@ -7,10 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: node:10.16-jessie
-      env:
-        TF_VAR_account_id: $ACCOUNT_ID
-        TF_VAR_aws_access_key: $ACCESS_KEY
-        TF_VAR_aws_secret_key: $SECRET_KEY
     steps:
     - uses: actions/checkout@v2
     - name: Set directory
@@ -28,6 +24,10 @@ jobs:
   execute:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      AWS_DEFAULT_REGION: "us-east-2"
+      AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
     steps:
     - name: Checkout
       uses: actions/checkout@v2
