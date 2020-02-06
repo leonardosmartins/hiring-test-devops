@@ -15,5 +15,21 @@ jobs:
       run: cd terraform/modules/lambda/app
     - name: Build
       run: npm install --only=production
+    - name: Zip
+      run: npm run zip
     - name: Teste
-      run: echo $ENV
+      run: ls terraform/modules/lambda/app
+    - uses: actions/upload-artifact@master
+      with:
+        name: lambda.zip
+        path: terraform/modules/lambda/app/
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/download-artifact@master
+      with:
+        name: lambda.zip
+        path: terraform/modules/lambda/app/
+    - name: Teste
+      run: ls terraform/modules/lambda/app

@@ -4,7 +4,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "start": "node lib"
+    "start": "node lib",
+    "zip": "rm -rf lambda.zip 2> /dev/null && zip -r9 lambda.zip lib/* node_modules/*"
   },
   "dependencies": {
     "express": "^4.17.1",
