@@ -15,14 +15,7 @@ jobs:
       run: |
         cd terraform/modules/lambda/app
         npm install --only=production
-    - name: LS
-      run: pwd
-    - name: LS2
-      run: ls
-    - name: Zip
-      run: npm run zip
-    - name: Teste
-      run: ls terraform/modules/lambda/app
+        npm run zip
     - uses: actions/upload-artifact@master
       with:
         name: lambda.zip
