@@ -1,5 +1,6 @@
 # Projeto Serverless
 
+[**Painel do CI/CD**](https://github.com/leonardosmartins/serverless-project/actions)
 ## Tecnologias
 
 Neste projeto foi utilizado a [AWS](https://aws.amazon.com/pt/) como *cloud* para hospedar o serviço e para provisionar os recursos necessários foi utilizado a ferramenta [Terraform](https://www.terraform.io/). Por fim, para criar o *CI/CD* foi utilizado o [GitHub Actions](https://github.com/features/actions)
