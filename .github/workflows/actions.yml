@@ -11,7 +11,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: NPM Install and Zip
       run: |
-        echo $TF_VAR_account_id
         apt-get update
         apt-get install -y zip
         cd modules/lambda/app
@@ -49,4 +48,9 @@ jobs:
         tf_actions_comment: false
         args: '-var-file="vars.tfvars"'
     - name: Terraform Output
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_actions_subcommand: 'output'
+        tf_actions_comment: false
       run: echo ${{ steps.terraform.outputs.tf_actions_output }}
