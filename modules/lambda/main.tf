@@ -26,23 +26,19 @@ resource "aws_iam_role" "role" {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Effect": "Allow",
       "Action": "sts:AssumeRole",
       "Principal": {
         "Service": "lambda.amazonaws.com"
       },
-      "Sid": ""
-    },
-    {
       "Effect": "Allow",
-      "Action": [
-        "logs:CreateLogGroup",
-        "logs:CreateLogStream",
-        "logs:PutLogEvents"
-      ],
-      "Resource": "*"
+      "Sid": ""
     }
   ]
 }
 POLICY
+}
+
+resource "aws_iam_role_policy_attachment" "policy-attach" {
+  role       = aws_iam_role.role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
