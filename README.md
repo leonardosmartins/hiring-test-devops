@@ -27,5 +27,6 @@ Para esse cenário, temos habilitado o **CloudWatch** da AWS, onde nele consegui
 
 ## Melhorias Futuras
 
-Utilizando o terraform, criar um DNS para acessar essa aplicação
+* Criar um DNS para acessar essa aplicação
+* Fazer mapeamento dos *status code* do Api Gateway
 
