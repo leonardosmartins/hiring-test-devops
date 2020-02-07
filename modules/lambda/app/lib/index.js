@@ -11,10 +11,13 @@ exports.handler = async (event, context, callback) => {
     if (response) {
       return (response)
     } else {
-      console.log("404")
+      console.error("Not Found - 404")
+      return {statusCode: 404, body: 'Not found'}
+
     }
   } catch (err) {
-    console.log("500")
+    console.error("Server Internal Error - 500")
+    return {statusCode: 500, body: 'Server Internal Error'}
   }
 };
 
