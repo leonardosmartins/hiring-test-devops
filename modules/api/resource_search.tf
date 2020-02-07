@@ -35,10 +35,6 @@ resource "aws_api_gateway_integration" "search_GET_integration" {
   type                    = "AWS"
   uri                     = var.lambda_invoke_arn
 
-  # request_parameters = {
-  #   "integration.request.path.a" = "method.request.path.q"
-  # }
-
   request_templates = {                  
    "application/json" =  <<REQUEST_TEMPLATE
    {

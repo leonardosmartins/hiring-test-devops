@@ -1,7 +1,6 @@
 module "api" {
   source = "./modules/api"
 
-  # general
   name              = var.name
   lambda_invoke_arn = module.app.lambda_invoke_arn
 }
@@ -9,7 +8,6 @@ module "api" {
 module "app" {
   source = "./modules/lambda"
 
-  # general
   name           = var.name
   aws_region     = var.aws_region
   account_id     = var.account_id

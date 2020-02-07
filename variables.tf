@@ -1,26 +1,12 @@
-#--------------------------------------------------------------
-# AWS Settings
-#--------------------------------------------------------------
-# variable "aws_access_key" {
-# }
-
-# variable "aws_secret_key" {
-# }
-
 variable "aws_region" {
-  description = "The AWS region to deploy into (e.g. us-east-1)."
-  default     = "us-east-2"
+  description = "The AWS Region"
 }
-
-#--------------------------------------------------------------
-# General
-#--------------------------------------------------------------
 variable "name" {
-  description = "The name used."
+  description = "The name used"
 }
 
 variable "account_id" {
-  
+  description = "The AWS Account ID"  
 }
 
 

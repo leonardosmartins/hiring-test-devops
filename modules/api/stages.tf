@@ -20,12 +20,9 @@ resource "aws_api_gateway_method_settings" "general_settings" {
   method_path = "*/*"
 
   settings {
-    # Enable CloudWatch logging and metrics
     metrics_enabled        = true
     data_trace_enabled     = true
     logging_level          = "INFO"
-
-    # Limit the rate of calls to prevent abuse and unwanted charges
     throttling_rate_limit  = 10000
     throttling_burst_limit = 5000
   }

@@ -7,10 +7,6 @@ exports.handler = async (event, context, callback) => {
   try {
     const { q: search = 'São Paulo, SP' } = event
     const response = await getWeatherCached(search)
-
-    // response.on('error', (e) => {
-    //   reject(Error(e))
-    // })
     
     if (response) {
       return (response)

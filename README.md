@@ -6,8 +6,6 @@ Neste projeto foi utilizado a [AWS](https://aws.amazon.com/pt/) como *cloud* par
 
 ## Configurando
 
-Este projeto necessita de algumas configurações .
-
 * Primeiro é necessário uma conta na **AWS** e um usuário com as chaves **ACCESS_KEY** e **SECRET_KEY** geradas e com as permissões adequadas.
 
 * Com as chaves do usuário criadas, deve-se agora criar no *GitHub*, na tela de configurações, duas *secrets* com os nomes de **ACCESS_KEY** e **SECRET_KEY** para armazenar as chaves geradas com segurança.
