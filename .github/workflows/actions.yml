@@ -9,7 +9,7 @@ jobs:
       image: node:10.16-jessie
     steps:
     - uses: actions/checkout@v2
-    - name: Set directory
+    - name: NPM Install and Zip
       run: |
         echo $TF_VAR_account_id
         apt-get update
@@ -21,7 +21,7 @@ jobs:
       with:
         name: lambda.zip
         path: modules/lambda/app/
-  execute:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     env:
@@ -41,14 +41,12 @@ jobs:
         tf_actions_version: 0.12.13
         tf_actions_subcommand: 'init'
         tf_actions_comment: false
-      env:
-        TF_VAR_account_id: aaaa
-        TF_VAR_aws_access_key: 'vvvvvv'
-        TF_VAR_aws_secret_key: "sdfas"
     - name: Terraform Apply
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 0.12.13
         tf_actions_subcommand: 'apply'
         tf_actions_comment: false
-        args: '-var-file="test.tfvars"'
+        args: '-var-file="vars.tfvars"'
+    - name: Terraform Output
+      run: echo ${{ steps.terraform.outputs.tf_actions_output }}

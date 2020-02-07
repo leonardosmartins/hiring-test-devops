@@ -5,3 +5,7 @@ output "api_id" {
 output "api_resource" {
   value = aws_api_gateway_resource.r_search.path
 }
+
+output "invoke_url" {
+  value = aws_api_gateway_stage.stage_api.invoke_url
+}

@@ -105,3 +105,4 @@ dist
 
 #Terraform
 .terraform/*
+modules/lambda/app/lambda.zip
