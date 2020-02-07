@@ -28,5 +28,5 @@ Para esse cenário, temos habilitado o **CloudWatch** da AWS, onde nele consegui
 ## Melhorias Futuras
 
 * Criar um DNS para acessar essa aplicação
-* Fazer mapeamento dos *status code* do Api Gateway
+* Fazer mapeamento dos *status code* no Api Gateway
 
